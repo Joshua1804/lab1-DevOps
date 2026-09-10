@@ -237,6 +237,15 @@ p {
   right: 0;
 }
 
+.site-nav a[aria-current="page"],
+.mobile-nav a[aria-current="page"] {
+  color: var(--color-text);
+}
+
+.site-nav a[aria-current="page"]::after {
+  right: 0;
+}
+
 .nav-toggle {
   display: none;
   flex-direction: column;

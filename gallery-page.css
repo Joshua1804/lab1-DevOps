@@ -1,0 +1,219 @@
+/* ---------------------------------------------------------------
+   Gallery page — extends tokens from css/style.css
+------------------------------------------------------------------ */
+
+.gallery-intro {
+  padding: clamp(3rem, 2.4rem + 2.5vw, 5.5rem) 0 clamp(1.5rem, 1rem + 2vw, 2.5rem);
+}
+
+.gallery-intro h1 {
+  font-size: clamp(2.2rem, 1.8rem + 1.8vw, 3.2rem);
+  max-width: 16ch;
+}
+
+.gallery-intro p {
+  margin-top: 1rem;
+  max-width: 52ch;
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+}
+
+.gallery-mosaic-section {
+  padding-bottom: var(--space-section);
+}
+
+.gallery-mosaic {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-gap);
+}
+
+.mosaic-item {
+  appearance: none;
+  -webkit-appearance: none;
+  position: relative;
+  grid-column: span 1;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  padding: 0;
+  margin: 0;
+  background: none;
+  font: inherit;
+  text-align: left;
+  color: inherit;
+  cursor: pointer;
+  display: block;
+  transition: transform var(--dur-med) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+}
+
+.mosaic-item-wide {
+  grid-column: span 3;
+  aspect-ratio: 21 / 8;
+}
+
+.mosaic-item-tall {
+  grid-column: span 2;
+  aspect-ratio: 3 / 2;
+}
+
+.mosaic-item:hover,
+.mosaic-item:focus-visible {
+  transform: translateY(-6px);
+  border-color: var(--color-border-strong);
+}
+
+.mosaic-item img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 700ms var(--ease-out);
+}
+
+.mosaic-item:hover img,
+.mosaic-item:focus-visible img {
+  transform: scale(1.06);
+}
+
+.mosaic-caption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 1.4rem 1.4rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  background: linear-gradient(0deg, rgba(10, 8, 14, 0.9) 0%, rgba(10, 8, 14, 0.35) 60%, transparent 100%);
+}
+
+.mosaic-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.35rem;
+  color: var(--color-text);
+}
+
+.mosaic-region {
+  font-size: 0.85rem;
+  color: var(--color-accent-strong);
+  font-weight: 600;
+}
+
+/* ---------------------------------------------------------------
+   Lightbox
+------------------------------------------------------------------ */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.5rem, 2vw, 2rem);
+  padding: clamp(1.25rem, 5vw, 4rem);
+  background: rgba(10, 8, 14, 0.92);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  opacity: 0;
+  transition: opacity var(--dur-med) var(--ease-out);
+}
+
+.lightbox[hidden] {
+  display: none;
+}
+
+.lightbox.is-open {
+  opacity: 1;
+}
+
+.lightbox-figure {
+  margin: 0;
+  max-width: min(1100px, 78vw);
+  max-height: 82vh;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.lightbox-figure img {
+  max-width: 100%;
+  max-height: 68vh;
+  object-fit: contain;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-border-strong);
+}
+
+.lightbox-figure figcaption {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.lightbox-figure figcaption #lightbox-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.lightbox-close,
+.lightbox-nav {
+  appearance: none;
+  -webkit-appearance: none;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border-strong);
+  background: var(--color-bg-raised);
+  color: var(--color-text);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out);
+}
+
+.lightbox-close:hover,
+.lightbox-nav:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.lightbox-nav:active,
+.lightbox-close:active {
+  transform: scale(0.94);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: clamp(1rem, 3vw, 2rem);
+  right: clamp(1rem, 3vw, 2rem);
+}
+
+@media (max-width: 860px) {
+  .gallery-mosaic {
+    grid-template-columns: 1fr;
+  }
+
+  .mosaic-item-wide,
+  .mosaic-item-tall,
+  .mosaic-item {
+    grid-column: span 1;
+    aspect-ratio: 4 / 3;
+  }
+
+  .lightbox {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .lightbox-nav {
+    position: static;
+  }
+}
