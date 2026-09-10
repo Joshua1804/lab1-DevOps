@@ -1,47 +1,215 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
-    <title>Explore India</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Explore India — Journeys Across a Living Country</title>
+    <meta
+      name="description"
+      content="Plan a journey through India's monuments, backwaters and coastlines, curated for travellers who want more than a checklist."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Work+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"
+    />
+
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <header>
-      <h1>Explore India!!</h1>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-      <nav>
-        <a href="#">Home</a>
-        <a href="#">Places</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="#">Contact</a>
+    <header class="site-header" id="top">
+      <div class="header-inner">
+        <a class="brand" href="#top">
+          <span class="brand-mark" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+              <circle cx="14" cy="14" r="12.5" stroke="currentColor" stroke-width="1.4" />
+              <path d="M14 6.5c3 3 3 12 0 15M14 6.5c-3 3-3 12 0 15" stroke="currentColor" stroke-width="1.2" />
+              <path d="M2 14h24" stroke="currentColor" stroke-width="1.2" />
+            </svg>
+          </span>
+          <span class="brand-name">Explore India</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Primary">
+          <a href="#top">Home</a>
+          <a href="#destinations">Destinations</a>
+          <a href="gallery-page.html">Gallery</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <a class="btn btn-primary btn-small nav-cta" href="#contact">Plan my trip</a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile">
+        <a href="#top">Home</a>
+        <a href="#destinations">Destinations</a>
+        <a href="gallery-page.html">Gallery</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn-primary" href="#contact">Plan my trip</a>
       </nav>
     </header>
 
-    <section class="hero">
-      <h2>Discover Incredible India</h2>
-      <p>Experience culture, heritage and nature.</p>
+    <main id="main">
+      <section class="hero">
+        <div class="hero-inner">
+          <div class="hero-copy" data-reveal>
+            <h1>India rewards the traveller who slows down.</h1>
+            <p>
+              Monuments at dawn, backwaters at dusk, coastlines in between.
+              Three routes, one unforgettable trip.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#destinations">
+                View destinations
+                <i class="ph ph-arrow-right" aria-hidden="true"></i>
+              </a>
+              <a class="link-quiet" href="gallery-page.html">Browse the gallery</a>
+            </div>
+          </div>
 
-      <button onclick="showMessage()">Explore More</button>
-    </section>
+          <div class="hero-visual" data-reveal data-reveal-delay="120">
+            <div class="hero-frame">
+              <img
+                src="./images/goa.jpeg"
+                alt="Golden hour over a palm-lined beach on the Goa coastline"
+                width="2900"
+                height="1935"
+                fetchpriority="high"
+              />
+            </div>
+            <div class="hero-badge">
+              <span class="hero-badge-num">3</span>
+              <span class="hero-badge-label">signature<br />routes</span>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    <section class="places">
-      <div class="card">
-        <h3>Taj Mahal</h3>
-        <p>Agra, Uttar Pradesh</p>
+      <section class="destinations" id="destinations">
+        <div class="section-inner">
+          <h2 data-reveal>Three places to start</h2>
+          <p class="section-lede" data-reveal>
+            A working monument, a slow river, a warm sea. Pick a mood and
+            build the rest of the trip around it.
+          </p>
+
+          <div class="destination-grid">
+            <a class="dest-card dest-card-feature" href="#contact" data-reveal>
+              <img
+                src="./images/tajmahal.jpg"
+                alt="The Taj Mahal reflected in its garden pool at sunrise, Agra"
+                loading="lazy"
+                width="600"
+                height="400"
+              />
+              <div class="dest-card-scrim">
+                <span class="dest-card-region">Agra, Uttar Pradesh</span>
+                <h3>Taj Mahal</h3>
+                <p>A marble monument that still stops conversation at first sight.</p>
+              </div>
+            </a>
+
+            <a class="dest-card" href="#contact" data-reveal data-reveal-delay="90">
+              <img
+                src="./images/kerala.jpg"
+                alt="A traditional houseboat drifting along the Kerala backwaters"
+                loading="lazy"
+                width="313"
+                height="180"
+              />
+              <div class="dest-card-scrim">
+                <span class="dest-card-region">Kerala</span>
+                <h3>Backwaters</h3>
+                <p>Houseboats, coconut groves and water that barely moves.</p>
+              </div>
+            </a>
+
+            <a class="dest-card" href="#contact" data-reveal data-reveal-delay="180">
+              <img
+                src="./images/goa.jpeg"
+                alt="Waves meeting the shore on a quiet Goa beach"
+                loading="lazy"
+                width="2900"
+                height="1935"
+              />
+              <div class="dest-card-scrim">
+                <span class="dest-card-region">Goa</span>
+                <h3>Coastline</h3>
+                <p>Beach shacks, sea breeze and sunsets worth waiting for.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="quote-band" data-reveal>
+        <div class="section-inner quote-inner">
+          <blockquote>
+            <p>
+              "Three weeks, three completely different Indias. The trip our
+              guide built around the backwaters and Agra sunrise is still the
+              one I describe when people ask me where to go next."
+            </p>
+            <footer>
+              <span class="quote-name">Meera Iyer</span>
+              <span class="quote-role">Travel writer, Bengaluru</span>
+            </footer>
+          </blockquote>
+        </div>
+      </section>
+
+      <section class="cta-band" id="contact" data-reveal>
+        <div class="section-inner cta-inner">
+          <h2>Ready to build your route?</h2>
+          <p>
+            Tell us how much time you have and what you want to feel, and
+            we'll sketch an itinerary around it.
+          </p>
+          <a class="btn btn-primary" href="mailto:hello@exploreindia.travel">
+            Start planning
+            <i class="ph ph-paper-plane-tilt" aria-hidden="true"></i>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="section-inner footer-inner">
+        <div class="footer-brand">
+          <span class="brand-name">Explore India</span>
+          <p>Slow, well-built trips across a country that rewards patience.</p>
+        </div>
+
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="#top">Home</a>
+          <a href="#destinations">Destinations</a>
+          <a href="gallery-page.html">Gallery</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="footer-social">
+          <a href="#" aria-label="Explore India on Instagram"><i class="ph ph-instagram-logo"></i></a>
+          <a href="#" aria-label="Explore India on Facebook"><i class="ph ph-facebook-logo"></i></a>
+          <a href="#" aria-label="Explore India on X"><i class="ph ph-x-logo"></i></a>
+          <a href="mailto:hello@exploreindia.travel" aria-label="Email Explore India"><i class="ph ph-envelope-simple"></i></a>
+        </div>
       </div>
 
-      <div class="card">
-        <h3>Kerala Backwaters</h3>
-        <p>God's Own Country</p>
+      <div class="section-inner footer-bottom">
+        <p>© 2026 Explore India. All rights reserved.</p>
       </div>
-
-      <div class="card">
-        <h3>Goa Beaches</h3>
-        <p>Sun, Sand and Sea</p>
-      </div>
-    </section>
-
-    <footer>
-      <p>© 2026 Explore India</p>
     </footer>
 
     <script src="./scripts/script.js"></script>
