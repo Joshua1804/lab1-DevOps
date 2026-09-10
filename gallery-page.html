@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Explore India — Journeys Across a Living Country</title>
+    <title>Gallery — Explore India</title>
     <meta
       name="description"
-      content="Plan a journey through India's monuments, backwaters and coastlines, curated for travellers who want more than a checklist."
+      content="A short visual gallery of India: the Taj Mahal at sunrise, the Kerala backwaters and the Goa coastline."
     />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,13 +21,14 @@
     />
 
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./gallery-page.css" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
-    <header class="site-header" id="top">
+    <header class="site-header">
       <div class="header-inner">
-        <a class="brand" href="#top">
+        <a class="brand" href="index.html">
           <span class="brand-mark" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
               <circle cx="14" cy="14" r="12.5" stroke="currentColor" stroke-width="1.4" />
@@ -39,9 +40,9 @@
         </a>
 
         <nav class="site-nav" aria-label="Primary">
-          <a href="#top" aria-current="page">Home</a>
-          <a href="#destinations">Destinations</a>
-          <a href="gallery-page.html">Gallery</a>
+          <a href="index.html">Home</a>
+          <a href="index.html#destinations">Destinations</a>
+          <a href="gallery-page.html" aria-current="page">Gallery</a>
           <a href="#contact">Contact</a>
         </nav>
 
@@ -53,126 +54,93 @@
       </div>
 
       <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile">
-        <a href="#top" aria-current="page">Home</a>
-        <a href="#destinations">Destinations</a>
-        <a href="gallery-page.html">Gallery</a>
+        <a href="index.html">Home</a>
+        <a href="index.html#destinations">Destinations</a>
+        <a href="gallery-page.html" aria-current="page">Gallery</a>
         <a href="#contact">Contact</a>
         <a class="btn btn-primary" href="#contact">Plan my trip</a>
       </nav>
     </header>
 
     <main id="main">
-      <section class="hero">
-        <div class="hero-inner">
-          <div class="hero-copy" data-reveal>
-            <h1>India rewards the traveller who slows down.</h1>
-            <p>
-              Monuments at dawn, backwaters at dusk, coastlines in between.
-              Three routes, one unforgettable trip.
-            </p>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="#destinations">
-                View destinations
-                <i class="ph ph-arrow-right" aria-hidden="true"></i>
-              </a>
-              <a class="link-quiet" href="gallery-page.html">Browse the gallery</a>
-            </div>
-          </div>
+      <section class="gallery-intro">
+        <div class="section-inner">
+          <h1 data-reveal>Moments from the road.</h1>
+          <p data-reveal>
+            A small, honest set of frames from three very different parts of
+            the country. Tap any image to look closer.
+          </p>
+        </div>
+      </section>
 
-          <div class="hero-visual" data-reveal data-reveal-delay="120">
-            <div class="hero-frame">
+      <section class="gallery-mosaic-section">
+        <div class="section-inner">
+          <div class="gallery-mosaic">
+            <button
+              type="button"
+              class="mosaic-item mosaic-item-wide"
+              data-reveal
+              data-lightbox-index="0"
+            >
               <img
                 src="./images/goa.jpeg"
                 alt="Golden hour over a palm-lined beach on the Goa coastline"
                 width="2900"
                 height="1935"
-                fetchpriority="high"
+                loading="lazy"
               />
-            </div>
-            <div class="hero-badge">
-              <span class="hero-badge-num">3</span>
-              <span class="hero-badge-label">signature<br />routes</span>
-            </div>
-          </div>
-        </div>
-      </section>
+              <span class="mosaic-caption">
+                <span class="mosaic-title">Goa</span>
+                <span class="mosaic-region">The coastline, late afternoon</span>
+              </span>
+            </button>
 
-      <section class="destinations" id="destinations">
-        <div class="section-inner">
-          <h2 data-reveal>Three places to start</h2>
-          <p class="section-lede" data-reveal>
-            A working monument, a slow river, a warm sea. Pick a mood and
-            build the rest of the trip around it.
-          </p>
-
-          <div class="destination-grid">
-            <a class="dest-card dest-card-feature" href="#contact" data-reveal>
+            <button
+              type="button"
+              class="mosaic-item mosaic-item-tall"
+              data-reveal
+              data-reveal-delay="90"
+              data-lightbox-index="1"
+            >
               <img
                 src="./images/tajmahal.jpg"
                 alt="The Taj Mahal reflected in its garden pool at sunrise, Agra"
-                loading="lazy"
                 width="600"
                 height="400"
+                loading="lazy"
               />
-              <div class="dest-card-scrim">
-                <span class="dest-card-region">Agra, Uttar Pradesh</span>
-                <h3>Taj Mahal</h3>
-                <p>A marble monument that still stops conversation at first sight.</p>
-              </div>
-            </a>
+              <span class="mosaic-caption">
+                <span class="mosaic-title">Taj Mahal</span>
+                <span class="mosaic-region">Agra, Uttar Pradesh</span>
+              </span>
+            </button>
 
-            <a class="dest-card" href="#contact" data-reveal data-reveal-delay="90">
+            <button
+              type="button"
+              class="mosaic-item"
+              data-reveal
+              data-reveal-delay="180"
+              data-lightbox-index="2"
+            >
               <img
                 src="./images/kerala.jpg"
                 alt="A traditional houseboat drifting along the Kerala backwaters"
-                loading="lazy"
                 width="313"
                 height="180"
-              />
-              <div class="dest-card-scrim">
-                <span class="dest-card-region">Kerala</span>
-                <h3>Backwaters</h3>
-                <p>Houseboats, coconut groves and water that barely moves.</p>
-              </div>
-            </a>
-
-            <a class="dest-card" href="#contact" data-reveal data-reveal-delay="180">
-              <img
-                src="./images/goa.jpeg"
-                alt="Waves meeting the shore on a quiet Goa beach"
                 loading="lazy"
-                width="2900"
-                height="1935"
               />
-              <div class="dest-card-scrim">
-                <span class="dest-card-region">Goa</span>
-                <h3>Coastline</h3>
-                <p>Beach shacks, sea breeze and sunsets worth waiting for.</p>
-              </div>
-            </a>
+              <span class="mosaic-caption">
+                <span class="mosaic-title">Kerala</span>
+                <span class="mosaic-region">Backwaters, early morning</span>
+              </span>
+            </button>
           </div>
-        </div>
-      </section>
-
-      <section class="quote-band" data-reveal>
-        <div class="section-inner quote-inner">
-          <blockquote>
-            <p>
-              "Three weeks, three completely different Indias. The trip our
-              guide built around the backwaters and Agra sunrise is still the
-              one I describe when people ask me where to go next."
-            </p>
-            <footer>
-              <span class="quote-name">Meera Iyer</span>
-              <span class="quote-role">Travel writer, Bengaluru</span>
-            </footer>
-          </blockquote>
         </div>
       </section>
 
       <section class="cta-band" id="contact" data-reveal>
         <div class="section-inner cta-inner">
-          <h2>Ready to build your route?</h2>
+          <h2>Want to see these places yourself?</h2>
           <p>
             Tell us how much time you have and what you want to feel, and
             we'll sketch an itinerary around it.
@@ -193,9 +161,9 @@
         </div>
 
         <nav class="footer-nav" aria-label="Footer">
-          <a href="#top">Home</a>
-          <a href="#destinations">Destinations</a>
-          <a href="gallery-page.html">Gallery</a>
+          <a href="index.html">Home</a>
+          <a href="index.html#destinations">Destinations</a>
+          <a href="gallery-page.html" aria-current="page">Gallery</a>
           <a href="#contact">Contact</a>
         </nav>
 
@@ -211,6 +179,28 @@
         <p>© 2026 Explore India. All rights reserved.</p>
       </div>
     </footer>
+
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+      <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Close image viewer">
+        <i class="ph ph-x" aria-hidden="true"></i>
+      </button>
+
+      <button type="button" class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous image">
+        <i class="ph ph-caret-left" aria-hidden="true"></i>
+      </button>
+
+      <figure class="lightbox-figure">
+        <img id="lightbox-image" src="" alt="" />
+        <figcaption>
+          <span id="lightbox-title"></span>
+          <span id="lightbox-region"></span>
+        </figcaption>
+      </figure>
+
+      <button type="button" class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next image">
+        <i class="ph ph-caret-right" aria-hidden="true"></i>
+      </button>
+    </div>
 
     <script src="./scripts/script.js"></script>
   </body>
